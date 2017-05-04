@@ -1,0 +1,545 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly XTPDll, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class XTP.API.RspInfoStruct: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 error_id : Public
+    System.String error_msg : Public
+Class XTP.API.SpecificTickerStruct: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 exchange_id : Public
+    System.String ticker : Public
+Class XTP.API.MarketDataStruct: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 exchange_id : Public
+    System.String ticker : Public
+    Double last_price : Public
+    Double pre_close_price : Public
+    Double open_price : Public
+    Double high_price : Public
+    Double low_price : Public
+    Double close_price : Public
+    Double pre_open_interest : Public
+    Double open_interest : Public
+    Double pre_settlement_price : Public
+    Double settlement_price : Public
+    Double upper_limit_price : Public
+    Double lower_limit_price : Public
+    Double pre_delta : Public
+    Double curr_delta : Public
+    Int64 data_time : Public
+    Int64 qty : Public
+    Double turnover : Public
+    Double avg_price : Public
+    Double[] bid : Public
+    Double[] ask : Public
+    Int64[] bid_qty : Public
+    Int64[] ask_qty : Public
+    Int64 trades_count : Public
+    System.String ticker_status : Public
+    Int64 total_bid_qty : Public
+    Int64 total_ask_qty : Public
+    Double ma_bid_price : Public
+    Double ma_ask_price : Public
+    Double ma_bond_bid_price : Public
+    Double ma_bond_ask_price : Public
+    Double yield_to_maturity : Public
+    Double iopv : Public
+    Int32 etf_buy_count : Public
+    Int32 etf_sell_count : Public
+    Double etf_buy_qty : Public
+    Double etf_buy_money : Public
+    Double etf_sell_qty : Public
+    Double etf_sell_money : Public
+    Double total_warrant_exec_qty : Public
+    Double warrant_lower_price : Public
+    Double warrant_upper_price : Public
+    Int32 cancel_buy_count : Public
+    Int32 cancel_sell_count : Public
+    Double cancel_buy_qty : Public
+    Double cancel_sell_qty : Public
+    Double cancel_buy_money : Public
+    Double cancel_sell_money : Public
+    Int64 total_buy_count : Public
+    Int64 total_sell_count : Public
+    Int32 duration_after_buy : Public
+    Int32 duration_after_sell : Public
+    Int32 num_bid_orders : Public
+    Int32 num_ask_orders : Public
+    Int32 exec_time : Public
+    System.String is_market_closed : Public
+    Double total_position : Public
+    Double pe_ratio1 : Public
+    Double pe_ratio2 : Public
+Class XTP.API.QuoteStaticInfoStruct: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 exchange_id : Public
+    System.String ticker : Public
+    System.String ticker_name : Public
+    Int32 ticker_type : Public
+    Double pre_close_price : Public
+    Double upper_limit_price : Public
+    Double lower_limit_price : Public
+    Double price_tick : Public
+    Int32 buy_qty_unit : Public
+    Int32 sell_qty_unit : Public
+Class XTP.API.QuoteEventSource: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Events:
+    OnQueryAllTickersDelegate OnQueryAllTickersEvent: SpecialName
+    OnMarketDataDelegate OnMarketDataEvent: SpecialName
+    OnUnSubMarketDataDelegate OnUnSubMarketDataEvent: SpecialName
+    OnSubMarketDataDelegate OnSubMarketDataEvent: SpecialName
+    OnErrorDelegate OnErrorEvent: SpecialName
+    OnDisconnectedDelegate OnDisconnectedEvent: SpecialName
+  Methods:
+    add_OnDisconnectedEvent(OnDisconnectedDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnDisconnectedEvent(OnDisconnectedDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnErrorEvent(OnErrorDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnErrorEvent(OnErrorDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnSubMarketDataEvent(OnSubMarketDataDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnSubMarketDataEvent(OnSubMarketDataDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnUnSubMarketDataEvent(OnUnSubMarketDataDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnUnSubMarketDataEvent(OnUnSubMarketDataDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnMarketDataEvent(OnMarketDataDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnMarketDataEvent(OnMarketDataDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnQueryAllTickersEvent(OnQueryAllTickersDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnQueryAllTickersEvent(OnQueryAllTickersDelegate): PrivateScope, Public, HideBySig, SpecialName
+    OnDisconnected(Int32): PrivateScope, Public, HideBySig
+    OnError(RspInfoStruct): PrivateScope, Public, HideBySig
+    OnSubMarketData(RspInfoStruct, SpecificTickerStruct, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    OnUnSubMarketData(RspInfoStruct, SpecificTickerStruct, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    OnMarketData(MarketDataStruct): PrivateScope, Public, HideBySig
+    OnQueryAllTickers(RspInfoStruct, QuoteStaticInfoStruct, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+Class XTP.API.QuoteEventSource+OnDisconnectedDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Int32): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(Int32, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.QuoteEventSource+OnErrorDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(RspInfoStruct): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(RspInfoStruct, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.QuoteEventSource+OnSubMarketDataDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(RspInfoStruct, SpecificTickerStruct, Boolean(HasFieldMarshal)): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(RspInfoStruct, SpecificTickerStruct, Boolean(HasFieldMarshal), AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.QuoteEventSource+OnUnSubMarketDataDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(RspInfoStruct, SpecificTickerStruct, Boolean(HasFieldMarshal)): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(RspInfoStruct, SpecificTickerStruct, Boolean(HasFieldMarshal), AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.QuoteEventSource+OnMarketDataDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(MarketDataStruct): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(MarketDataStruct, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.QuoteEventSource+OnQueryAllTickersDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(RspInfoStruct, QuoteStaticInfoStruct, Boolean(HasFieldMarshal)): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(RspInfoStruct, QuoteStaticInfoStruct, Boolean(HasFieldMarshal), AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Struct XTP.API.MyQuoteSpi: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+Class XTP.API.TXPQuote: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean IsLogin : Public
+  Events:
+    OnQueryAllTickersDelegate OnQueryAllTickersEvent: SpecialName
+    OnMarketDataDelegate OnMarketDataEvent: SpecialName
+    OnUnSubMarketDataDelegate OnUnSubMarketDataEvent: SpecialName
+    OnSubMarketDataDelegate OnSubMarketDataEvent: SpecialName
+    OnErrorDelegate OnErrorEvent: SpecialName
+    OnDisconnectedDelegate OnDisconnectedEvent: SpecialName
+  Methods:
+    Login(String, Int32, String, String, PROTOCOL_TYPE): PrivateScope, Public, HideBySig
+    SubscribeMarketData(String[], EXCHANGE_TYPE, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    GetTradingDay(): PrivateScope, Public, HideBySig
+    GetApiVersion(): PrivateScope, Public, HideBySig
+    GetApiLastError(): PrivateScope, Public, HideBySig
+    QueryAllTickers(EXCHANGE_TYPE): PrivateScope, Public, HideBySig
+    Logout(): PrivateScope, Public, HideBySig
+    add_OnDisconnectedEvent(OnDisconnectedDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnDisconnectedEvent(OnDisconnectedDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnErrorEvent(OnErrorDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnErrorEvent(OnErrorDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnSubMarketDataEvent(OnSubMarketDataDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnSubMarketDataEvent(OnSubMarketDataDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnUnSubMarketDataEvent(OnUnSubMarketDataDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnUnSubMarketDataEvent(OnUnSubMarketDataDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnMarketDataEvent(OnMarketDataDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnMarketDataEvent(OnMarketDataDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnQueryAllTickersEvent(OnQueryAllTickersDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnQueryAllTickersEvent(OnQueryAllTickersDelegate): PrivateScope, Public, HideBySig, SpecialName
+Struct XTP.API.PROTOCOL_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    XTP.API.PROTOCOL_TYPE XTP_PROTOCOL_TCP = 1 : Public, Static, Literal, HasDefault
+    XTP.API.PROTOCOL_TYPE XTP_PROTOCOL_UDP = 2 : Public, Static, Literal, HasDefault
+Struct XTP.API.EXCHANGE_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    XTP.API.EXCHANGE_TYPE XTP_EXCHANGE_SH = 1 : Public, Static, Literal, HasDefault
+    XTP.API.EXCHANGE_TYPE XTP_EXCHANGE_SZ = 2 : Public, Static, Literal, HasDefault
+    XTP.API.EXCHANGE_TYPE XTP_EXCHANGE_MAX = 3 : Public, Static, Literal, HasDefault
+Class XTP.API.XTPOrderInsert: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UInt64 order_xtp_id : Public
+    UInt32 order_client_id : Public
+    System.String ticker : Public
+    XTP.API.MARKET_TYPE market : Public
+    Double price : Public
+    Double stop_price : Public
+    Int64 quantity : Public
+    XTP.API.PRICE_TYPE price_type : Public
+    XTP.API.SIDE_TYPE side : Public
+Class XTP.API.XTPQueryOrder: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String ticker : Public
+    UInt64 begin_time : Public
+    UInt64 end_time : Public
+Class XTP.API.XTPQueryTrader: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String ticker : Public
+    Int64 begin_time : Public
+    Int64 end_time : Public
+Class XTP.API.QueryAssetRspStruct: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Double total_asset : Public
+    Double buying_power : Public
+    Double security_asset : Public
+    Double fund_buy_amount : Public
+    Double fund_buy_fee : Public
+    Double fund_sell_amount : Public
+    Double fund_sell_fee : Public
+    Double withholding_amount : Public
+Class XTP.API.OrderInfoStruct: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UInt64 order_xtp_id : Public
+    UInt32 order_client_id : Public
+    UInt32 order_cancel_client_id : Public
+    UInt32 order_cancel_xtp_id : Public
+    System.String ticker : Public
+    XTP.API.MARKET_TYPE market : Public
+    Double price : Public
+    Int64 quantity : Public
+    XTP.API.PRICE_TYPE price_type : Public
+    XTP.API.SIDE_TYPE side : Public
+    Int64 qty_traded : Public
+    Int64 qty_left : Public
+    Int64 insert_time : Public
+    Int64 update_time : Public
+    Int64 cancel_time : Public
+    Double trade_amount : Public
+    System.String order_local_id : Public
+    XTP.API.ORDER_STATUS_TYPE order_status : Public
+    XTP.API.ORDER_SUBMIT_STATUS_TYPE order_submit_status : Public
+    XTP.API.TOrderTypeType order_type : Public
+Class XTP.API.OrderCancelInfoStruct: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UInt64 order_cancel_xtp_id : Public
+    UInt64 order_xtp_id : Public
+Class XTP.API.TradeReportStruct: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UInt64 order_xtp_id : Public
+    UInt32 order_client_id : Public
+    System.String ticker : Public
+    XTP.API.MARKET_TYPE market : Public
+    UInt64 local_order_id : Public
+    System.String exec_id : Public
+    Double price : Public
+    Int64 quantity : Public
+    Int64 trade_time : Public
+    Double trade_amount : Public
+    UInt64 report_index : Public
+    System.String order_exch_id : Public
+    XTP.API.TTradeTypeType trade_type : Public
+    XTP.API.SIDE_TYPE side : Public
+    System.String branch_pbu : Public
+Class XTP.API.QueryStkPositionStruct: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String ticker : Public
+    System.String ticker_name : Public
+    XTP.API.MARKET_TYPE market : Public
+    Int64 total_qty : Public
+    Int64 sellable_qty : Public
+    Double avg_price : Public
+    Double unrealized_pnl : Public
+Class XTP.API.TraderEventSource: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Events:
+    OnQueryPositionDelegate OnQueryPositionEvent: SpecialName
+    OnQueryAssetDelegate OnQueryAssetEvent: SpecialName
+    OnQueryTradeDelegate OnQueryTradeEvent: SpecialName
+    OnTradeDelegate OnTradeEvent: SpecialName
+    OnOrderCancelDelegate OnOrderCancelEvent: SpecialName
+    OnQueryOrderDelegate OnQueryOrderEvent: SpecialName
+    OnOrderDelegate OnOrderEvent: SpecialName
+    OnErrorDelegate OnErrorEvent: SpecialName
+    OnDisconnectedDelegate OnDisconnectedEvent: SpecialName
+  Methods:
+    add_OnDisconnectedEvent(OnDisconnectedDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnDisconnectedEvent(OnDisconnectedDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnErrorEvent(OnErrorDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnErrorEvent(OnErrorDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnOrderEvent(OnOrderDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnOrderEvent(OnOrderDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnQueryOrderEvent(OnQueryOrderDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnQueryOrderEvent(OnQueryOrderDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnOrderCancelEvent(OnOrderCancelDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnOrderCancelEvent(OnOrderCancelDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnTradeEvent(OnTradeDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnTradeEvent(OnTradeDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnQueryTradeEvent(OnQueryTradeDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnQueryTradeEvent(OnQueryTradeDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnQueryAssetEvent(OnQueryAssetDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnQueryAssetEvent(OnQueryAssetDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnQueryPositionEvent(OnQueryPositionDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnQueryPositionEvent(OnQueryPositionDelegate): PrivateScope, Public, HideBySig, SpecialName
+    OnDisconnected(UInt64, Int32): PrivateScope, Public, HideBySig
+    OnError(RspInfoStruct): PrivateScope, Public, HideBySig
+    OnOrder(RspInfoStruct, OrderInfoStruct): PrivateScope, Public, HideBySig
+    OnQueryOrder(RspInfoStruct, OrderInfoStruct, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    OnOrderCancel(RspInfoStruct, OrderCancelInfoStruct): PrivateScope, Public, HideBySig
+    OnTrade(TradeReportStruct): PrivateScope, Public, HideBySig
+    OnQueryTrade(RspInfoStruct, TradeReportStruct, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    OnQueryPosition(RspInfoStruct, QueryStkPositionStruct, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    OnQueryAsset(RspInfoStruct, QueryAssetRspStruct, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+Class XTP.API.TraderEventSource+OnDisconnectedDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(UInt64, Int32): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(UInt64, Int32, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.TraderEventSource+OnErrorDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(RspInfoStruct): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(RspInfoStruct, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.TraderEventSource+OnOrderDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(RspInfoStruct, OrderInfoStruct): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(RspInfoStruct, OrderInfoStruct, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.TraderEventSource+OnQueryOrderDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(RspInfoStruct, OrderInfoStruct, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(RspInfoStruct, OrderInfoStruct, Int32, Boolean(HasFieldMarshal), AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.TraderEventSource+OnOrderCancelDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(RspInfoStruct, OrderCancelInfoStruct): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(RspInfoStruct, OrderCancelInfoStruct, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.TraderEventSource+OnTradeDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(TradeReportStruct): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(TradeReportStruct, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.TraderEventSource+OnQueryTradeDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(RspInfoStruct, TradeReportStruct, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(RspInfoStruct, TradeReportStruct, Int32, Boolean(HasFieldMarshal), AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.TraderEventSource+OnQueryAssetDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(RspInfoStruct, QueryAssetRspStruct, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(RspInfoStruct, QueryAssetRspStruct, Int32, Boolean(HasFieldMarshal), AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class XTP.API.TraderEventSource+OnQueryPositionDelegate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(RspInfoStruct, QueryStkPositionStruct, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(RspInfoStruct, QueryStkPositionStruct, Int32, Boolean(HasFieldMarshal), AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Struct XTP.API.MyTraderSpi: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+Class XTP.API.TXPTrader: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String, XTP.API.TE_RESUME_TYPE): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean IsLogin : Public
+  Events:
+    OnQueryPositionDelegate OnQueryPositionEvent: SpecialName
+    OnOrderCancelDelegate OnOrderCancelEvent: SpecialName
+    OnQueryOrderDelegate OnQueryOrderEvent: SpecialName
+    OnOrderDelegate OnOrderEvent: SpecialName
+    OnQueryTradeDelegate OnQueryTradeEvent: SpecialName
+    OnTradeDelegate OnTradeEvent: SpecialName
+    OnQueryAssetDelegate OnQueryAssetEvent: SpecialName
+    OnErrorDelegate OnErrorEvent: SpecialName
+    OnDisconnectedDelegate OnDisconnectedEvent: SpecialName
+  Methods:
+    Login(String, Int32, String, String, PROTOCOL_TYPE): PrivateScope, Public, HideBySig
+    GetClientIDByXTPID(UInt64): PrivateScope, Public, HideBySig
+    GetAccountByXTPID(UInt64): PrivateScope, Public, HideBySig
+    SubscribePublicTopic(TE_RESUME_TYPE): PrivateScope, Public, HideBySig
+    GetTradingDay(): PrivateScope, Public, HideBySig
+    GetApiVersion(): PrivateScope, Public, HideBySig
+    GetApiLastError(): PrivateScope, Public, HideBySig
+    Logout(UInt64): PrivateScope, Public, HideBySig
+    InsertOrder(XTPOrderInsert, UInt64): PrivateScope, Public, HideBySig
+    CancelOrder(UInt64, UInt64): PrivateScope, Public, HideBySig
+    QueryOrderByXTPID(UInt64, UInt64, Int32): PrivateScope, Public, HideBySig
+    QueryOrders(XTPQueryOrder, UInt64, Int32): PrivateScope, Public, HideBySig
+    QueryTradesByXTPID(UInt64, UInt64, Int32): PrivateScope, Public, HideBySig
+    QueryTrades(XTPQueryTrader, UInt64, Int32): PrivateScope, Public, HideBySig
+    QueryPosition(String, UInt64, Int32): PrivateScope, Public, HideBySig
+    QueryAsset(UInt64, Int32): PrivateScope, Public, HideBySig
+    add_OnDisconnectedEvent(OnDisconnectedDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnDisconnectedEvent(OnDisconnectedDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnErrorEvent(OnErrorDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnErrorEvent(OnErrorDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnQueryAssetEvent(OnQueryAssetDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnQueryAssetEvent(OnQueryAssetDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnTradeEvent(OnTradeDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnTradeEvent(OnTradeDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnQueryTradeEvent(OnQueryTradeDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnQueryTradeEvent(OnQueryTradeDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnOrderEvent(OnOrderDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnOrderEvent(OnOrderDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnQueryOrderEvent(OnQueryOrderDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnQueryOrderEvent(OnQueryOrderDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnOrderCancelEvent(OnOrderCancelDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnOrderCancelEvent(OnOrderCancelDelegate): PrivateScope, Public, HideBySig, SpecialName
+    add_OnQueryPositionEvent(OnQueryPositionDelegate): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnQueryPositionEvent(OnQueryPositionDelegate): PrivateScope, Public, HideBySig, SpecialName
+Struct XTP.API.SIDE_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    XTP.API.SIDE_TYPE XTP_SIDE_BUY = 1 : Public, Static, Literal, HasDefault
+    XTP.API.SIDE_TYPE XTP_SIDE_SELL = 2 : Public, Static, Literal, HasDefault
+    XTP.API.SIDE_TYPE XTP_SIDE_BUY_OPEN = 3 : Public, Static, Literal, HasDefault
+    XTP.API.SIDE_TYPE XTP_SIDE_SELL_OPEN = 4 : Public, Static, Literal, HasDefault
+    XTP.API.SIDE_TYPE XTP_SIDE_BUY_CLOSE = 5 : Public, Static, Literal, HasDefault
+    XTP.API.SIDE_TYPE XTP_SIDE_SELL_CLOSE = 6 : Public, Static, Literal, HasDefault
+Struct XTP.API.TOrderTypeType: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    XTP.API.TOrderTypeType XTP_ORDT_Normal = 48 : Public, Static, Literal, HasDefault
+    XTP.API.TOrderTypeType XTP_ORDT_DeriveFromQuote = 49 : Public, Static, Literal, HasDefault
+    XTP.API.TOrderTypeType XTP_ORDT_DeriveFromCombination = 50 : Public, Static, Literal, HasDefault
+    XTP.API.TOrderTypeType XTP_ORDT_Combination = 51 : Public, Static, Literal, HasDefault
+    XTP.API.TOrderTypeType XTP_ORDT_ConditionalOrder = 52 : Public, Static, Literal, HasDefault
+    XTP.API.TOrderTypeType XTP_ORDT_Swap = 53 : Public, Static, Literal, HasDefault
+Struct XTP.API.TTradeTypeType: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    XTP.API.TTradeTypeType XTP_TRDT_Common = 48 : Public, Static, Literal, HasDefault
+    XTP.API.TTradeTypeType XTP_TRDT_OptionsExecution = 49 : Public, Static, Literal, HasDefault
+    XTP.API.TTradeTypeType XTP_TRDT_OTC = 50 : Public, Static, Literal, HasDefault
+    XTP.API.TTradeTypeType XTP_TRDT_EFPDerived = 51 : Public, Static, Literal, HasDefault
+    XTP.API.TTradeTypeType XTP_TRDT_CombinationDerived = 52 : Public, Static, Literal, HasDefault
+    XTP.API.TTradeTypeType XTP_TRDT_EFTPurchase = 53 : Public, Static, Literal, HasDefault
+    XTP.API.TTradeTypeType XTP_TRDT_EFTRedem = 54 : Public, Static, Literal, HasDefault
+Struct XTP.API.MARKET_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    XTP.API.MARKET_TYPE XTP_MKT_INIT = 0 : Public, Static, Literal, HasDefault
+    XTP.API.MARKET_TYPE XTP_MKT_SZ_A = 1 : Public, Static, Literal, HasDefault
+    XTP.API.MARKET_TYPE XTP_MKT_SH_A = 2 : Public, Static, Literal, HasDefault
+    XTP.API.MARKET_TYPE XTP_MKT_MAX = 3 : Public, Static, Literal, HasDefault
+Struct XTP.API.TE_RESUME_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    XTP.API.TE_RESUME_TYPE XTP_TERT_RESTART = 0 : Public, Static, Literal, HasDefault
+    XTP.API.TE_RESUME_TYPE XTP_TERT_RESUME = 1 : Public, Static, Literal, HasDefault
+    XTP.API.TE_RESUME_TYPE XTP_TERT_QUICK = 2 : Public, Static, Literal, HasDefault
+Struct XTP.API.ORDER_SUBMIT_STATUS_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    XTP.API.ORDER_SUBMIT_STATUS_TYPE XTP_ORDER_SUBMIT_STATUS_INSERT_SUBMITTED = 1 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_SUBMIT_STATUS_TYPE XTP_ORDER_SUBMIT_STATUS_INSERT_ACCEPTED = 2 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_SUBMIT_STATUS_TYPE XTP_ORDER_SUBMIT_STATUS_INSERT_REJECTED = 3 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_SUBMIT_STATUS_TYPE XTP_ORDER_SUBMIT_STATUS_CANCEL_SUBMITTED = 4 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_SUBMIT_STATUS_TYPE XTP_ORDER_SUBMIT_STATUS_CANCEL_REJECTED = 5 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_SUBMIT_STATUS_TYPE XTP_ORDER_SUBMIT_STATUS_CANCEL_ACCEPTED = 6 : Public, Static, Literal, HasDefault
+Struct XTP.API.ORDER_ACTION_STATUS_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    XTP.API.ORDER_ACTION_STATUS_TYPE XTP_ORDER_ACTION_STATUS_SUBMITTED = 1 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_ACTION_STATUS_TYPE XTP_ORDER_ACTION_STATUS_ACCEPTED = 2 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_ACTION_STATUS_TYPE XTP_ORDER_ACTION_STATUS_REJECTED = 3 : Public, Static, Literal, HasDefault
+Struct XTP.API.ORDER_STATUS_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    XTP.API.ORDER_STATUS_TYPE XTP_ORDER_STATUS_INIT = 0 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_STATUS_TYPE XTP_ORDER_STATUS_ALLTRADED = 1 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_STATUS_TYPE XTP_ORDER_STATUS_PARTTRADEDQUEUEING = 2 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_STATUS_TYPE XTP_ORDER_STATUS_PARTTRADEDNOTQUEUEING = 3 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_STATUS_TYPE XTP_ORDER_STATUS_NOTRADEQUEUEING = 4 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_STATUS_TYPE XTP_ORDER_STATUS_CANCELED = 5 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_STATUS_TYPE XTP_ORDER_STATUS_REJECTED = 6 : Public, Static, Literal, HasDefault
+    XTP.API.ORDER_STATUS_TYPE XTP_ORDER_STATUS_UNKNOWN = 7 : Public, Static, Literal, HasDefault
+Struct XTP.API.PRICE_TYPE: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    XTP.API.PRICE_TYPE XTP_PRICE_LIMIT = 1 : Public, Static, Literal, HasDefault
+    XTP.API.PRICE_TYPE XTP_PRICE_BEST_OR_CANCEL = 2 : Public, Static, Literal, HasDefault
+    XTP.API.PRICE_TYPE XTP_PRICE_BEST5_OR_LIMIT = 3 : Public, Static, Literal, HasDefault
+    XTP.API.PRICE_TYPE XTP_PRICE_BEST5_OR_CANCEL = 4 : Public, Static, Literal, HasDefault
+    XTP.API.PRICE_TYPE XTP_PRICE_ALL_OR_CANCEL = 5 : Public, Static, Literal, HasDefault
+    XTP.API.PRICE_TYPE XTP_PRICE_FORWARD_BEST = 6 : Public, Static, Literal, HasDefault
+    XTP.API.PRICE_TYPE XTP_PRICE_REVERSE_BEST_LIMIT = 7 : Public, Static, Literal, HasDefault
+    XTP.API.PRICE_TYPE XTP_PRICE_TYPE_MAX = 8 : Public, Static, Literal, HasDefault

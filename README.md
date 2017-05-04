@@ -1,6 +1,6 @@
-# XTP CLI（中泰证券极速交易接口.NET版本接口）
+# XTP.NET（中泰证券极速交易接口.NET版本接口）
 
-中泰证券XTP接口，用CLI封装C++，输出的DLL可供原生.NET程序调用。
+中泰证券XTP接口的.NET版，用CLI封装C++，输出的DLL可供原生.NET程序调用。
 
 中泰XTP网址：https://www.xtphelp.com/
 
